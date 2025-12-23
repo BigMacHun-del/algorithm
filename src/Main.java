@@ -1,15 +1,25 @@
-//TIP 코드를 <b>실행</b>하려면 <shortcut actionId="Run"/>을(를) 누르거나
-// 에디터 여백에 있는 <icon src="AllIcons.Actions.Execute"/> 아이콘을 클릭하세요.
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP 캐럿을 강조 표시된 텍스트에 놓고 <shortcut actionId="ShowIntentionActions"/>을(를) 누르면
-        // IntelliJ IDEA이(가) 수정을 제안하는 것을 확인할 수 있습니다.
-        System.out.printf("Hello and welcome!");
+        // 배열 안의 두 수를 선택해서 두 수의 합이 9가 되는 조합을 찾기
+        int[] numbers = {2, 11, 7, 15};
+        int target = 9;
+        int count = 0;
+        ArrayList<Integer> list1 = new ArrayList();
+        ArrayList<Integer> list2 = new ArrayList();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP <shortcut actionId="Debug"/>을(를) 눌러 코드 디버그를 시작하세요. 1개의 <icon src="AllIcons.Debugger.Db_set_breakpoint"/> 중단점을 설정해 드렸습니다
-            // 언제든 <shortcut actionId="ToggleLineBreakpoint"/>을(를) 눌러 중단점을 더 추가할 수 있습니다.
-            System.out.println("i = " + i);
+        // 처음부터 탐색하는 완전탐색
+        for (int i = 0; i < numbers.length; i++){
+            for (int j = 0; j < numbers.length; j++){
+                if (numbers[i] + numbers[j]  == target){
+                    list1.add(numbers[i]);
+                    list2.add(numbers[j]);
+                    System.out.println("9가 되는 조합" + (count+1));
+                    System.out.println(list1.get(count) + " / " + list2.get(count));
+                    count++;
+                }
+            }
         }
     }
 }
